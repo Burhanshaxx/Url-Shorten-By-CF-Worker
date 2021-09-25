@@ -7,9 +7,7 @@ const html404 = `<!DOCTYPE html>
 
 async function randomString(len) {
 　　len = len || 6;
-　　let $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';    
-  /****Removed confusing letters an numbers, oOLl,9gq,Vv,Uu,I1****/
-  
+　　let $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
 　　let maxPos = $chars.length;
 　　let result = '';
 　　for (i = 0; i < len; i++) {
@@ -86,8 +84,7 @@ async function handleRequest(request) {
   console.log(path)
   if(!path){
 
-    const html= await fetch("https://cdn.jsdelivr.net/gh/51sec/Url-Shorten-By-CF-Worker@main/index.html")
-/****customized index.html at main branch, easier to edit it****/
+    const html= await fetch("https://cdn.jsdelivr.net/gh/xyTom/Url-Shorten-Worker@gh-pages/index.html")
     
     return new Response(await html.text(), {
     headers: {
